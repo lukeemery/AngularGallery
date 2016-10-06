@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-xs-12">
+        <a class="btn btn-sm btn-default pull-right" href="#!/gallery/">&laquo;&nbsp;Back</a>
+        <h2>{{$ctrl.image.title._content}}&nbsp;<small>Taken: {{$ctrl.image.dates.taken}}</small></h2>
+        
+        <img class="img-responsive img-thumbnail" src="http://farm{{$ctrl.image.farm}}.staticflickr.com/{{$ctrl.image.server}}/{{$ctrl.image.id}}_{{$ctrl.image.originalsecret}}_o.jpg" />
+        
+        <p ng-if="$ctrl.image.description._content">{{$ctrl.image.description._content}}</p>
+    </div>
+    <div class="col-xs-12">
+    	<hr />
+    </div>
+    <div class="col-xs-12">
+        <h3>Comments</h3>
+        <div class="comments">
+        	<div class="media" ng-repeat="comment in $ctrl.comments">
+            	<div class="media-left">
+                	<a href="#">
+                    	<img class="media-object" src="resources/images/gomer.gif" alt="Profile" />
+                    </a>
+                </div>
+                <div class="media-body">
+                	<h4 class="media-heading">{{comment.name}}</h4>
+                    {{comment.content}}
+                </div>
+        	</div>
+        </div>
+        <hr />
+        <form ng-submit="$ctrl.addComment(comment)">
+        	<div class="media">
+            	<div class="media-left">
+                	<a href="#">
+                    	<img class="media-object" src="resources/images/gomer.gif" alt="Profile" />
+                    </a>
+                </div>
+                <div class="media-body">
+                	<div class="form-group">
+                    	<div class="input-group">
+                          <span class="input-group-addon">Name</span>
+                          <input ng-model="comment.name" type="text" class="form-control" aria-label="Full name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    	<div class="input-group">
+                            <span class="input-group-addon">Comment</span>
+                            <textarea ng-model="comment.content" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" ng-model="comment.imageId" value="{{$ctrl.image.id}}" />
+                    <button type="submit" class="btn btn-default">Add New</button>
+                </div>
+        	</div>
+        </form>
+    </div>
+</div>

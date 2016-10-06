@@ -1,0 +1,7 @@
+<div class="row">
+	<div ng-repeat="image in $ctrl.images" class="col-sm-4 col-md-2">
+    	<a href="#!/gallery/{{image.id}}" class="thumbnail">
+        	<img src="{{image.url_q}}" height="{{image.height_q}}" width="{{image.width_q}}" alt="{{image.title}}" />
+        </a>
+    </div>
+</div>

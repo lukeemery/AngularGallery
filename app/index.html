@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="galleryApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Image Gallery</title>
+        <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="app.css" />
+        
+        <script src="components/angular/angular.min.js"></script>
+        <script src="components/angular-resource/angular-resource.min.js"></script>
+        <script src="components/angular-route/angular-route.min.js"></script>
+        <script src="app.module.js"></script>
+        <script src="app.config.js"></script>
+        
+        <script src="image-list/image-list.module.js"></script>
+        <script src="image-list/image-list.component.js"></script>
+        <script src="image-detail/image-detail.module.js"></script>
+        <script src="image-detail/image-detail.component.js"></script>
+        
+        <script src="core/core.module.js"></script>
+        <script src="core/image/image.module.js"></script>
+        <script src="core/image/image.service.js"></script>
+        <script src="core/comment/comment.module.js"></script>
+        <script src="core/comment/comment.service.js"></script>
+    </head>
+    <body>
+    
+    	<div class="container">
+            <div class="page-header">
+            	<a href="#!"><h1>Luke James Emery&nbsp;<small>A gallery built with AngularJS &amp; Bootstrap</small></h1></a>
+            </div>
+            <div ng-view></div>
+            <footer class="text-center">
+                <hr>
+                <small>Created by Luke Emery &copy;2016</small>
+                <hr>
+            </footer>
+        </div>
+    </body>
+</html>
